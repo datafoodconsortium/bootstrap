@@ -1,0 +1,27 @@
+[
+  {
+    "prefix": "ldp",
+    "owl": "http://www.w3.org/ns/ldp#",
+    "url": "http://www.w3.org/ns/ldp#"
+  },
+  {
+    "prefix": "dfc",
+    "owl": "http://static.datafoodconsortium.org/ontologies/DFC_FullModel.owl",
+    "url": "http://static.datafoodconsortium.org/ontologies/DFC_FullModel.owl#"
+  },
+  {
+    "prefix": "dfc-b",
+    "owl": "http://static.datafoodconsortium.org/ontologies/DFC_BusinessOntology.owl",
+    "url": "http://static.datafoodconsortium.org/ontologies/DFC_BusinessOntology.owl#"
+  },
+  {
+    "prefix": "dfc-t",
+    "owl": "http://static.datafoodconsortium.org/ontologies/DFC_TechnicalOntology.owl",
+    "url": "http://static.datafoodconsortium.org/ontologies/DFC_TechnicalOntology.owl#"
+  },
+  {
+    "prefix": "dfc-p",
+    "owl": "http://static.datafoodconsortium.org/ontologies/DFC_ProductOntology.owl",
+    "url": "http://static.datafoodconsortium.org/ontologies/DFC_ProductOntology.owl#"
+  }
+]

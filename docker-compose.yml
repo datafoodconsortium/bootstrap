@@ -1,0 +1,42 @@
+services:
+  fuseki:
+    image: stain/jena-fuseki
+    container_name: fuseki
+    restart: always
+    #volumes:
+    #  - fuseki:/fuseki
+    ports:
+      - "3030:3030"
+    networks:
+      - semapps
+    environment:
+      ADMIN_PASSWORD: "admin"
+
+  middleware:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: dfc
+    container_name: middleware
+    restart: always
+    environment:
+      - SEMAPPS_SPARQL_ENDPOINT=http://fuseki:3030/
+      - SEMAPPS_MAIN_DATASET=localData
+      - SEMAPPS_JENA_USER=admin
+      - SEMAPPS_JENA_PASSWORD=admin
+      - SEMAPPS_HOME_URL=http://middleware:3000/
+    depends_on:
+      - fuseki
+    volumes:
+      - ./:/app
+    networks:
+      - semapps
+    ports:
+      - "3000:3000"
+
+#volumes:
+#  fuseki:
+
+networks:
+  semapps:
+    name: semapps_network
