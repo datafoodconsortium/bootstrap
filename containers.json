@@ -1,12 +1,31 @@
 [
+  {  "path": "/address",
+    "acceptedTypes": ["dfc-b:Address"]
+  },
   {
     "path": "/person",
     "acceptedTypes": ["dfc-b:Person", "dfc-b:Address"],
     "dereference": ["dfc-b:hasAddress/dfc-b:city","dfc-b:hasAddress/dfc-b:country"]
   },
   {
+    "path": "/enterprise",
+    "acceptedTypes": ["dfc-b:Enterprise"]
+  },
+  {
+    "path": "/customerCategory",
+    "acceptedTypes": ["dfc-b:CustomerCategory"]
+  },
+  {
+    "path": "/suppliedProduct",
+    "acceptedTypes": ["dfc-b:SuppliedProduct"]
+  },
+  {
     "path": "/catalogItem",
     "acceptedTypes": ["dfc-b:CatalogItem"],
     "dereference": ["dfc-b:references/dfc-p:hasType","dfc-b:references/dfc-p:hasUnit","dfc-t:hostedBy"]
+  },
+  {
+    "path": "/offer",
+    "acceptedTypes": ["dfc-b:Offer"]
   }
 ]
