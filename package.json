@@ -12,11 +12,13 @@
     "start": "moleculer-runner --env --instances=max services"
   },
   "dependencies": {
+    "@semapps/auth": "^0.3.17",
     "@semapps/fuseki-admin": "^0.3.17",
     "@semapps/jsonld": "^0.3.17",
     "@semapps/ldp": "^0.3.17",
     "@semapps/sparql-endpoint": "^0.3.17",
     "@semapps/triplestore": "^0.3.17",
+    "@semapps/webid": "^0.3.17",
     "dotenv": "^10.0.0",
     "moleculer": "^0.14.17",
     "moleculer-repl": "^0.6.6",
