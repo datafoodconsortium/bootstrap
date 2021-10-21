@@ -33,6 +33,7 @@ services:
       - semapps
     ports:
       - "3000:3000"
+    command: bash -c "yarn install && npm run dev"
 
 #volumes:
 #  fuseki:

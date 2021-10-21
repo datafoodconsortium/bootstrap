@@ -1,20 +1,26 @@
 const ApiGatewayService = require('moleculer-web');
-const { Routes: SparqlEndpointRoutes } = require('@semapps/sparql-endpoint');
 
 module.exports = {
   mixins: [ApiGatewayService],
   settings: {
+    server: true,
+    routes: [
+      {
+        path: '/ontology',
+        use: [
+          ApiGatewayService.serveStatic('./public/ontology.ttl', {
+            setHeaders: res => {
+              res.setHeader('Access-Control-Allow-Origin', '*');
+              res.setHeader('Content-Type', 'text/turtle; charset=utf-8');
+            }
+          })
+        ]
+      }
+    ],
     cors: {
       origin: '*',
+      methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE', 'HEAD', 'OPTIONS'],
       exposedHeaders: '*'
     }
-  },
-  dependencies: ['ldp', 'sparqlEndpoint'],
-  async started() {
-    const routes = [
-      ...(await this.broker.call('ldp.getApiRoutes')),
-      ...(await this.broker.call('sparqlEndpoint.getApiRoutes')),
-    ];
-    routes.forEach(route => this.addRoute(route));
   }
 };
