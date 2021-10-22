@@ -11,8 +11,8 @@ module.exports = {
     containers,
     defaultContainerOptions: {
       // jsonContext: urlJoin(process.env.SEMAPPS_HOME_URL, 'context.json'),
-      allowAnonymousEdit: true,
-      allowAnonymousDelete: true
+      allowAnonymousEdit: false,
+      allowAnonymousDelete: false
     }
   }
 };
