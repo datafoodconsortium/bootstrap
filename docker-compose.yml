@@ -1,10 +1,10 @@
 services:
   fuseki:
     image: stain/jena-fuseki
-    container_name: fuseki
+    container_name: dfc-platform-fuseki
     restart: always
-    #volumes:
-    #  - fuseki:/fuseki
+    volumes:
+     - fuseki:/fuseki
     ports:
       - "3030:3030"
     networks:
@@ -16,15 +16,15 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: dfc
-    container_name: middleware
+    image: dfc-platform-middleware
+    container_name: dfc-platform-middleware
     restart: always
     environment:
       - SEMAPPS_SPARQL_ENDPOINT=http://fuseki:3030/
       - SEMAPPS_MAIN_DATASET=localData
       - SEMAPPS_JENA_USER=admin
       - SEMAPPS_JENA_PASSWORD=admin
-      - SEMAPPS_HOME_URL=http://middleware:3000/
+      - SEMAPPS_HOME_URL=http://localhost:3000/
       - SEMAPPS_OIDC_ISSUER=https://login.lescommuns.org/auth/realms/data-food-consortium/
       - SEMAPPS_OIDC_CLIENT_ID=proto-dfc
       - SEMAPPS_OIDC_CLIENT_SECRET=0ed79cdb-81fb-4ae1-b77d-2a61f010a4f7
@@ -38,8 +38,8 @@ services:
       - "3000:3000"
     command: bash -c "yarn install && npm run dev"
 
-#volumes:
-#  fuseki:
+volumes:
+ fuseki:
 
 networks:
   semapps:

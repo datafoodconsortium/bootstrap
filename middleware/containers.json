@@ -4,7 +4,7 @@
   },
   {
     "path": "/person",
-    "acceptedTypes": ["dfc-b:Person", "dfc-b:Address"],
+    "acceptedTypes": ["dfc-b:Person"],
     "dereference": ["dfc-b:hasAddress/dfc-b:city","dfc-b:hasAddress/dfc-b:country"]
   },
   {
