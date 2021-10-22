@@ -14,7 +14,7 @@ RUN apk add --update --no-cache git bash yarn nano npm
 RUN yarn global add yalc
 RUN yarn global add nodemon
 
-COPY . /app
+COPY ./middleware/ /app
 
 RUN yarn install
 

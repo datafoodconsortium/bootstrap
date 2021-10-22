@@ -31,7 +31,7 @@ services:
     depends_on:
       - fuseki
     volumes:
-      - ./:/app
+      - ./middleware/:/app
     networks:
       - semapps
     ports:
