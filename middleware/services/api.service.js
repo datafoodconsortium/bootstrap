@@ -28,7 +28,7 @@ module.exports = {
     // Authorize if token payload email is DFC
     async authenticate(ctx, route, req, res) {
       const payload = await ctx.call('auth.authenticate', { route, req, res } );
-      if( payload == null || payload.email !== "testdfc@tutanota.com" )
+      if( payload == null )
         return Promise.reject(new E.UnAuthorizedError(E.ERR_INVALID_TOKEN));
     }
   }
