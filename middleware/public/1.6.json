@@ -28,7 +28,7 @@
       "dfc-b:defines":{
         "@type":"@id"
       },
-      "@base": "https://dfc.lecoqlibre.fr/dfc/api/1.6/"
+      "@base": "https://dfc.lecoqlibre.fr/1.6/"
     },
     "@graph": [
         {

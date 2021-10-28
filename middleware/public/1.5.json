@@ -19,7 +19,7 @@
       "dfc-b:offeredTo":{
         "@type":"@id"
       },
-      "@base": "https://dfc.lecoqlibre.fr/api/1.5/"
+      "@base": "https://dfc.lecoqlibre.fr/1.5/"
     },
     "@id": "/person/jean-dupont",
     "@type": "dfc-b:Person",
