@@ -1,0 +1,190 @@
+{
+    "@context": {
+      "dfc-b": "http://static.datafoodconsortium.org/ontologies/dfc_FullModel.owl#",
+      "dfc-p": "http://static.datafoodconsortium.org/ontologies/DFC_ProductOntology.owl#",
+      "dfc-u": "http://static.datafoodconsortium.org/data/units.rdf#",
+      "dfc-pt": "http://static.datafoodconsortium.org/data/types.rdf#",
+      "dfc-p:hasUnit":{
+        "@type":"@id"
+      },
+      "dfc-p:hasType":{
+        "@type":"@id"
+      },
+      "dfc-b:references":{
+        "@type":"@id"
+      },
+      "dfc-b:offeredThrough":{
+        "@type":"@id"
+      },
+      "dfc-b:offeredTo":{
+        "@type":"@id"
+      },
+      "dfc-b:offers":{
+        "@type":"@id"
+      },
+      "dfc-b:supplies":{
+        "@type":"@id"
+      },
+      "dfc-b:defines":{
+        "@type":"@id"
+      },
+      "@base": "https://dfc.lecoqlibre.fr/dfc/api/1.6/"
+    },
+    "@graph": [
+        {
+            "@id": "/person/jean-dupont",
+            "@type": "dfc-b:Person",
+            "dfc-b:familyName": "Dupont",
+            "dfc-b:firtsName": "Jean",
+            "dfc-b:hasAdress": {
+            "@type": "dfc-b:Address",
+                "dfc-b:city": "Caen",
+                "dfc-b:country": "France",
+                "dfc-b:postcode": "14000",
+                "dfc-b:street": "1, avenue de Paris"
+            },
+            "dfc-b:affiliates": [ "/entreprise/la-belle-ferme" ]
+        },
+        {
+            "@id": "/entreprise/la-belle-ferme",
+            "@type": "dfc-b:Entreprise",
+            "dfc-b:VATnumber": "",
+            "dfc-b:supplies": [
+                "/customerCategory/amapien",
+                "/customerCategory/client"
+            ],
+            "dfc-b:manages": [
+                "/catalogItem/tomate-coeur-de-boeuf-vrac-kg",
+                "/catalogItem/tomates-anciennes-vrac-kg",
+                "/catalogItem/oeufs-boite6"
+            ]
+        },
+        {
+            "@id": "/customerCategory/amapien",
+            "@type": "dfc-b:CustomerCategory",
+            "dfc-b:description": "Amapien"
+        },
+        {
+            "@id": "/customerCategory/client",
+            "@type": "dfc-b:CustomerCategory",
+            "dfc-b:description": "Client simple"
+        },
+        {
+            "@id": "/suppliedProduct/tomate-coeur-de-boeuf-vrac-kg",
+            "@type": "dfc-b:SuppliedProduct",
+            "dfc-p:hasUnit": "dfc-u:kg",
+            "dfc-b:quantity": "1",
+            "dfc-p:hasType": "dfc-pt:vegetable",
+            "dfc-b:description": "Tomate coeur de boeuf en vrac au kilo",
+            "dfc-b:totalTheoriticalStock": "41",
+            "dfc-b:brand": "supply brand",
+            "dfc-b:claim": "supply claim",
+            "dfc-b:image": "supply image url",
+            "dfc-b:lifeTime": "supply lifeTime",
+            "dfc-b:physicalCharacterisctics": "supply physical characterisctics"
+        },
+        {
+            "@id": "/suppliedProduct/tomates-anciennes-vrac-kg",
+            "@type": "dfc-b:SuppliedProduct",
+            "dfc-p:hasUnit": "dfc-u:kg",
+            "dfc-b:quantity": "1",
+            "dfc-p:hasType": "dfc-pt:old-variety-tomato",
+            "dfc-b:description": "Tomates anciennes, différentes variétés mélangées, en vrac au kilo",
+            "dfc-b:totalTheoriticalStock": "53",
+            "dfc-b:brand": "supply brand",
+            "dfc-b:claim": "supply claim",
+            "dfc-b:image": "supply image url",
+            "dfc-b:lifeTime": "supply lifeTime",
+            "dfc-b:physicalCharacterisctics": "supply physical characterisctics"
+        },
+        {
+            "@id": "/suppliedProduct/oeufs-boite6",
+            "@type": "dfc-b:SuppliedProduct",
+            "dfc-p:hasUnit": "dfc-u:u",
+            "dfc-b:quantity": "1",
+            "dfc-p:hasType": "dfc-pt:egg",
+            "dfc-b:description": "Boite de 6 oeufs",
+            "dfc-b:totalTheoriticalStock": "9",
+            "dfc-b:brand": "supply brand",
+            "dfc-b:claim": "supply claim",
+            "dfc-b:image": "supply image url",
+            "dfc-b:lifeTime": "supply lifeTime",
+            "dfc-b:physicalCharacterisctics": "supply physical characterisctics"
+        },
+        {
+            "@id": "/catalogItem/tomate-coeur-de-boeuf-vrac-kg",
+            "@type": "dfc-b:CatalogItem",
+            "dfc-b:references": "/suppliedProduct/tomate-coeur-de-boeuf-vrac-kg",
+            "dfc-b:sku": "catalog item gtin or sku",
+            "dfc-b:stockLimitation": "999",
+            "dfc-b:offeredThrough": [
+                "/offer/tomate-coeur-de-boeuf-vrac-kg1",
+                "/offer/tomate-coeur-de-boeuf-vrac-kg2"
+            ]
+        }, 
+        {
+            "@id": "/catalogItem/tomates-anciennes-vrac-kg",
+            "@type": "dfc-b:CatalogItem",
+            "dfc-b:references": "/suppliedProduct/tomates-anciennes-vrac-kg",
+            "dfc-b:sku": "catalog item gtin or sku",
+            "dfc-b:stockLimitation": "999",
+            "dfc-b:offeredThrough": [
+                "/offer/tomates-anciennes-vrac-kg1",
+                "/offer/tomates-anciennes-vrac-kg2"
+            ]
+        },
+        {  
+            "@id": "/catalogItem/oeufs-boite6",
+            "@type": "dfc-b:CatalogItem",
+            "dfc-b:references": "/suppliedProduct/oeufs-boite6",
+            "dfc-b:sku": "catalog item gtin or sku",
+            "dfc-b:stockLimitation": "999",  
+            "dfc-b:offeredThrough": [
+                "/offer/oeufs-boite6-amapien",
+                "/offer/oeufs-boite6-client"
+            ]  
+        },
+        {
+            "@id": "/offer/tomate-coeur-de-boeuf-vrac-kg1",
+            "@type": "dfc-b:Offer",
+            "dfc-b:offeredTo": "/customerCategory/amapien",
+            "dfc-b:price": "2.5",
+            "dfc-b:stockLimitation": "999"
+        },
+        {
+            "@id": "/offer/tomate-coeur-de-boeuf-vrac-kg2",
+            "@type": "dfc-b:Offer",
+            "dfc-b:offeredTo": "/customerCategory/client",
+            "dfc-b:price": "3.5",
+            "dfc-b:stockLimitation": "999"
+        },
+        {
+            "@id": "/offer/tomates-anciennes-vrac-kg1",
+            "@type": "dfc-b:Offer",  
+            "dfc-b:offeredTo": "/customerCategory/amapien",
+            "dfc-b:price": "2.2",
+            "dfc-b:stockLimitation": "999"
+        },
+        { 
+            "@id": "/offer/tomates-anciennes-vrac-kg2",
+            "@type": "dfc-b:Offer",  
+            "dfc-b:offeredTo": "/customerCategory/client",
+            "dfc-b:price": "2.75",
+            "dfc-b:stockLimitation": "999"
+        },
+        {
+            "@id": "/offer/oeufs-boite6-amapien",
+            "@type": "dfc-b:Offer",  
+            "dfc-b:offeredTo": "/customerCategory/amapien",
+            "dfc-b:price": "2",
+            "dfc-b:stockLimitation": "999"
+        },
+        { 
+            "@id": "/offer/oeufs-boite6-client",
+            "@type": "dfc-b:Offer",  
+            "dfc-b:offeredTo": "/customerCategory/client",
+            "dfc-b:price": "2.5",
+            "dfc-b:stockLimitation": "999"
+        }
+    ]
+}
